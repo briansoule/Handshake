@@ -29,4 +29,20 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="29px"
         android:text="@string/stopwatch_pause" />
+
+    <Button
+        android:id="@+id/captureFront"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100px"
+        android:onClick="onClick"
+        android:text="Take Picture" />
+
+    <ImageView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="286dp"
+        android:src="@android:drawable/picture_frame" />
+
 </FrameLayout>

@@ -22,18 +22,25 @@ import android.os.SystemClock;
 import android.view.KeyEvent;
 import android.widget.Chronometer;
 import android.widget.TextView;
+//import android.hardware.Camera;
+//import android.view.SurfaceHolder;
 
 /**
  * StopWatch sample's main activity.
  */
 public class StopWatchActivity extends Activity {
 
+	/**
+	 * Chronometer logic
+	 */
   private Chronometer mChronometer;
   private TextView mHint;
-
   private long mBase = 0;
   private boolean mStarted = false;
-
+  
+//  private Camera aCamera;
+//  private SurfaceHolder aSurfaceHolder;
+  
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -41,6 +48,9 @@ public class StopWatchActivity extends Activity {
 
     mChronometer = (Chronometer) findViewById(R.id.stopwatch);
     mHint = (TextView) findViewById(R.id.phrase_hint);
+    
+//    aCamera = Camera.open();
+//    aSurfaceHolder = SurfaceHolder
   }
 
   /**
@@ -92,7 +102,7 @@ public class StopWatchActivity extends Activity {
   private void toggleStopWatch() {
     if (mStarted) {
       mBase = SystemClock.elapsedRealtime();
-     // mChronometer.stop();
+      mChronometer.stop();
       mHint.setText("Don't be impatient.");
      // mHint.setText(R.string.stopwatch_resume);
       mChronometer.setText("Handshake");
@@ -101,7 +111,7 @@ public class StopWatchActivity extends Activity {
      // mChronometer.setBase("We love Markerly");
     	mChronometer.setText("Handshake");
     	mHint.setText("Loading Handshake...");
-     // mChronometer.start();x
+      mChronometer.start();
      // mHint.setText(R.string.stopwatch_pause);
     }
     mStarted = !mStarted;
